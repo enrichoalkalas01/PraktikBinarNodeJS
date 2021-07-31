@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Javascript</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	</head>
+	<body>
+		ini file baru index.html
+	</body>
+	<script type="text/javascript">
+		var opts = {
+			username: 'enrichoalkalas',
+			password: '1234567'
+		}
+
+		// console.log(JSON.stringify(opts))
+
+		fetch('http://localhost:5000/link', {
+			method: 'post',
+			body: JSON.stringify(opts),
+			headers: {
+			    'Content-Type': 'application/json; charset=UTF-8',
+		 	},
+		}).then(response => {
+			return response.json()
+		}).then(data => {
+			console.log(data)
+		})
+	</script>
+</html>
+
+
